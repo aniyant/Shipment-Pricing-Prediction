@@ -1,0 +1,751 @@
+dataset_details:
+  No_of_columns: 32
+
+columns:
+  Brand: category
+  Country: category
+  Delivered to Client Date: object
+  Delivery Recorded Date: object
+  Dosage: category
+  Dosage Form: category
+  First Line Designation: object
+  Freight Cost (USD): float
+  Fulfill Via: category
+  Item Description: category
+  Line Item Insurance (USD): float
+  Line Item Quantity: float
+  Line Item Value: float
+  Managed By: category
+  Manufacturing Site: category
+  Molecule/Test Type: category
+  PO Sent to Vendor Date: object
+  PQ First Sent to Client Date: object
+  Pack Price: float
+  Product Group: category
+  Project Code: category
+  Scheduled Delivery Date: object
+  Shipment Mode: category
+  Sub Classification: category
+  Unit Price: float
+  Unit of Measure (Per Pack): float
+  Vendor: category
+  Vendor INCO Term: category
+  Weight (Kilograms): float
+
+categorical_columns:
+- Project Code
+- Country
+- Managed By
+- Fulfill Via
+- Vendor INCO Term
+- Shipment Mode
+- Product Group
+- Sub Classification
+- Vendor
+- Item Description
+- Molecule/Test Type
+- Brand
+- Dosage
+- Dosage Form
+- Manufacturing Site
+
+
+numerical_columns:
+- Unit of Measure (Per Pack)
+- Line Item Quantity
+- Line Item Value
+- Pack Price
+- Unit Price
+- Line Item Insurance (USD)
+- Weight (Kilograms)
+
+datetime_columns:
+- Scheduled Delivery Date
+- Delivered to Client Date
+
+target_column: Freight Cost (USD)
+
+domain_value:
+  Brand:
+  - Generic
+  - Determine
+  - Uni-Gold
+  - Aluvia
+  - Stat-Pak
+  - Bioline
+  - Kaletra
+  - Norvir
+  - Colloidal Gold
+  - Truvada
+  - OraQuick
+  - Videx
+  - Stocrin/Sustiva
+  - Capillus
+  - Genie
+  - Invirase
+  - Viread
+  - Clearview
+  - Ziagen
+  - Prezista
+  - Crixivan
+  - First Response
+  - Intelence
+  - Videx EC
+  - Coartem
+  - Atripla
+  - Isentress
+  - Viracept
+  - Reyataz
+  - Trizivir
+  - Retrovir
+  - Paramax
+  - LAV
+  - INSTi
+  - Hexagon
+  - Multispot
+  - Reveal
+  - ImmunoComb
+  - CareStart
+  - InstantCHEK
+  - Visitect
+  - DoubleCheck
+  Country:
+  - Nigeria
+  - "C\xF4te d'Ivoire"
+  - Uganda
+  - Zambia
+  - Vietnam
+  - Tanzania
+  - Haiti
+  - Mozambique
+  - Rwanda
+  - Zimbabwe
+  - South Africa
+  - Ethiopia
+  - Guyana
+  - Congo, DRC
+  - Kenya
+  - Namibia
+  - South Sudan
+  - Botswana
+  - Cameroon
+  - Burundi
+  - Sudan
+  - Ghana
+  - Dominican Republic
+  - Swaziland
+  - Malawi
+  - Mali
+  - Pakistan
+  - Guatemala
+  - Benin
+  - Libya
+  - Angola
+  - Liberia
+  - Sierra Leone
+  - Afghanistan
+  - Senegal
+  - Belize
+  - Lesotho
+  - Guinea
+  - Togo
+  Dosage:
+  - 300mg
+  - 200mg
+  - 600mg
+  - 150/300/200mg
+  - 150/300mg
+  - 10mg/ml
+  - 200/50mg
+  - 150mg
+  - 300/300mg
+  - 600/300/300mg
+  - 150/200/30mg
+  - 100mg
+  - 600/200/300mg
+  - 80/20mg/ml
+  - 200/300mg
+  - 30/50/60mg
+  - 20mg/ml
+  - 50mg
+  - 150/30mg
+  - 30mg
+  - 300/200mg
+  - 100/25mg
+  - 30/60mg
+  - 400mg
+  - 600/300mg
+  - 60/30mg
+  - 300/100mg
+  - 250mg
+  - 30mg/ml
+  - 25mg
+  - 15mg
+  - 300/150/300mg
+  - 500/25mg
+  - 30/50/6mg
+  - 30/6mg
+  - 500mg
+  - 1mg/ml
+  - 20/120mg
+  - 60/100/12mg
+  - 20mg
+  - 150/300+200mg
+  - 150/300mg+600mg
+  - 60mg
+  - 125mg
+  - 2g
+  - 60/12mg
+  - 600mg/2ml
+  - 50+153mg
+  - 50mg/g
+  - 133.3/33.3mg
+  - 150/200/40mg
+  Dosage Form:
+  - Tablet
+  - Tablet - FDC
+  - Test kit
+  - Oral solution
+  - Capsule
+  - Chewable/dispersible tablet - FDC
+  - Oral suspension
+  - Chewable/dispersible tablet
+  - Test kit - Ancillary
+  - Delayed-release capsules
+  - Tablet - FDC + blister
+  - Tablet - FDC + co-blister
+  - Delayed-release capsules - blister
+  - Injection
+  - Powder for oral solution
+  - Oral powder
+  - Tablet - blister
+  Fulfill Via:
+  - From RDC
+  - Direct Drop
+  Item Description:
+  - HIV 1/2, Determine Complete HIV Kit, 100 Tests
+  - Efavirenz 600mg, tablets, 30 Tabs
+  - Lamivudine/Nevirapine/Zidovudine 150/200/300mg, tablets, 60 Tabs
+  - Nevirapine 200mg, tablets, 60 Tabs
+  - Lamivudine/Zidovudine 150/300mg, tablets, 60 Tabs
+  - HIV 1/2, Uni-Gold HIV Kit, 20 Tests
+  - Lamivudine 150mg, tablets, 60 Tabs
+  - Lamivudine/Tenofovir Disoproxil Fumarate 300/300mg, tablets, 30 Tabs
+  - Efavirenz/Lamivudine/Tenofovir Disoproxil Fumarate 600/300/300mg, tablets, 30
+    Tabs
+  - Lopinavir/Ritonavir 200/50mg [Aluvia], tablets, 120 Tabs
+  - Zidovudine 300mg, tablets, 60 Tabs
+  - Tenofovir Disoproxil Fumarate 300mg, tablets, 30 Tabs
+  - Lamivudine/Nevirapine/Stavudine 150/200/30mg, tablets, 60 Tabs
+  - Abacavir 300mg, tablets, 60 Tabs
+  - HIV 1/2, Determine HIV Kit, without Lancets, 100 Tests
+  - Nevirapine 10mg/ml, oral suspension w/syringe, Bottle, 240 ml
+  - Lopinavir/Ritonavir 80/20mg/ml [Kaletra], oral solution, cool, Bottle 5 x 60 ml
+  - HIV 1/2, Stat-Pak HIV, Kit, 20 Tests
+  - Emtricitabine/Tenofovir Disoproxil Fumarate 200/300mg, tablets, 30 Tabs
+  - Lamivudine/Nevirapine/Zidovudine 30/50/60mg, dispersible tablets, 60 Tabs
+  - Lopinavir/Ritonavir 200/50mg, tablets, 120 Tabs
+  - Efavirenz/Emtricitabine/Tenofovir Disoproxil Fumarate 600/200/300mg, tablets,
+    30 Tabs
+  - HIV 1/2, Bioline 3.0 Kit, Lancets, Capillary pipets, Alcohol swabs included, 25
+    Tests
+  - Stavudine 30mg, capsules, 60 Caps
+  - HIV 1/2, SKB Colloidal Gold, Diagnostic Kit, Antibody, 50 Tests
+  - Emtricitabine/Tenofovir Disoproxil Fumarate 200/300mg [Truvada], tablets, 30 Tabs
+  - Lamivudine/Stavudine 150/30mg, tablets, 60 Tabs
+  - Lopinavir/Ritonavir 100/25mg [Aluvia], tablets, 60 Tabs
+  - Efavirenz 200mg, capsule, 90 Caps
+  - Efavirenz 50mg, capsule, 30 Caps
+  - Zidovudine 10mg/ml, oral solution w/syringe, Bottle, 240 ml
+  - Lamivudine 10mg/ml, oral solution w/syringe, Bottle, 240 ml
+  - Atazanavir/Ritonavir 300/100mg, tablets, 30 Tabs
+  - Ritonavir 100mg [Norvir], film coated tablets, 60 Tabs
+  - Abacavir 20mg/ml, oral solution, Bottle, 240 ml
+  - Zidovudine 10mg/ml, oral solution, Bottle, 240 ml
+  - Lamivudine 10mg/ml, oral solution, Bottle, 240 ml
+  - Efavirenz 200mg, scored tablets, 90 Tabs
+  - HIV 1/2, OraQuick Advance HIV Rapid Antibody Kit, 100 Tests
+  - Ritonavir 100mg [Norvir], capsules, cool, 4 x 84 Caps
+  - Nevirapine 10mg/ml, oral suspension, Bottle, 240 ml
+  - Abacavir/Lamivudine 60/30mg, tablets, 60 Tabs
+  - Lamivudine/Zidovudine 30/60mg, tablets, 60 Tabs
+  - HIV 1/2, Capillus HIV Kit, 100 Tests
+  - Efavirenz 30mg/ml [Stocrin/Sustiva], oral solution, Bottle, 180 ml
+  - Lamivudine/Zidovudine 30/60mg, dispersible tablets, 60 Tabs
+  - Abacavir 20mg/ml, oral solution w/syringe, Bottle, 240 ml
+  - Tenofovir Disoproxil Fumarate 300mg [Viread], tablets, 30 Tabs
+  - Abacavir/Lamivudine 600/300mg, scored tablets, 30 Tabs
+  - Didanosine 250mg, delayed-release capsules, 30 Caps
+  - HIV, Lancet, Safety, for HIV Test kits, 100 Pcs
+  - HIV 1/2, Bioline 3.0 Kit, (no accessories), 30 Tests
+  - Didanosine 200mg, chewable/dispersible tablets, 60 Tabs
+  - '#108853** HIV, Genie II HIV-1/HIV-2 Kit, 40 Tests'
+  - HIV 1/2, Clearview Complete Kit, 25 Tests
+  - Didanosine 25mg [Videx], chewable tablets, 60 Tabs
+  - Abacavir/Lamivudine 600/300mg, tablets, 30 Tabs
+  - Abacavir 20mg/ml [Ziagen], oral solution, Bottle, 240 ml
+  - Darunavir 300mg [Prezista], tablets, 120 Tabs
+  - Capillary Tubes, for Determine, EDTA, 50uL,100 Pcs
+  - Stavudine 15mg, capsules, 60 Caps
+  - Didanosine 100mg, chewable/dispersible tablets, 60 Tabs
+  - Lamivudine/Stavudine 150/30mg, tablets, 30 Tabs
+  - HIV 1/2, Stat-Pak Dipstick Assay Kit, 30 Tests
+  - Indinavir 400mg [Crixivan], capsules, 180 Caps
+  - Zidovudine 100mg, capsules, 100 Caps
+  - Ritonavir 100mg [Norvir], film coated tablets, 30 Tabs
+  - HIV 1/2/O, First Response HIV 1-2.0, v.3.0 Cards Kit, 30 Tests
+  - Didanosine 400mg, delayed-release capsules, 30 Caps
+  - Nevirapine 50mg, dispersible tablets (tablets for oral suspension), 30 Tabs
+  - Saquinavir 200mg [Invirase], capsules, 270 Caps
+  - Lamivudine/Stavudine 30/6mg, dispersible tablets, 60 Tabs
+  - Etravirine 100mg [Intelence], tablets, 120 Tabs
+  - Lamivudine/Nevirapine/Stavudine 30/50/6mg, dispersible tablets, 60 Tabs
+  - Abacavir/Lamivudine 60/30mg, dispersible tablets, 60 Tabs
+  - Didanosine 50mg [Videx], chewable tablets, 60 Tabs
+  - Saquinavir 500mg [Invirase], tablets, 120 Tabs
+  - Stavudine 1mg/ml, powder for oral solution, 200 ml
+  - Raltegravir 400mg [Isentress], tablets, 60 Tabs
+  - Efavirenz/Emtricitabine/Tenofovir Disoproxil Fumarate 600/200/300mg [Atripla],
+    tablets, 30 Tabs
+  - Nevirapine 10mg/ml, oral suspension w/syringe, Bottle, 100 ml
+  - Sulfadoxine/Pyrimethamine 500/25mg, tablets, 1000 Tabs
+  - Nelfinavir (as mesilate) 250mg [Viracept], tablets, 270 Tabs
+  - Abacavir/Lamivudine/Zidovudine 300/150/300mg, tablets, 60 Tabs
+  - '#109435**HIV, OraQuick Controls Kit, 3 Vials'
+  - Atazanavir 150mg, capsules, 60 Caps
+  - Didanosine 200mg, delayed-release capsules, 30 Caps
+  - Lopinavir/Ritonavir 100/25mg, tablets, 60 Tabs
+  - Stavudine 20mg, capsules, 60 Caps
+  - HIV 1/2, Genie III Kit, 50 Tests
+  - Abacavir/Lamivudine/Zidovudine 300/150/300mg [Trizivir], tablets, 60 Tabs
+  - Didanosine EC 400mg [Videx EC], delayed-release capsules, Blister 3 x 10 Caps
+  - Lamivudine/Zidovudine+Nevirapine 150/300+200mg, tablets, co-blister, 60+60 Tabs
+  - Lamivudine/Nevirapine/Stavudine 60/100/12mg, dispersible tablets, 60 Tabs
+  - Artemether/Lumefantrine 20/120mg [Coartem], scored tablets, Blister 30 x 18 Tabs
+  - Chase Buffer, Determine, 100 Tests, 2.5ml x 1 Vial
+  - Lamivudine/Zidovudine+Efavirenz 150/300mg+600mg, tablets, co-blister 60+30 Tabs
+  - Didanosine EC 250mg [Videx EC], delayed-release capsules, Blister 3 x 10 Caps
+  - Abacavir 60mg, dispersible tablets, 60 Tabs
+  - Didanosine 2g [Videx], powder for oral solution 10mg/ml, reconstitute to 200 ml
+  - Artemether/Lumefantrine 20/120mg [Coartem], scored tablets, Blister 30 x 24 Tabs
+  - Lamivudine/Stavudine 60/12mg, dispersible tablets, 60 Tabs
+  - HIV 2, New LAV Blot 2 HIV Kit, 18 Tests
+  - '#109436**HIV 1, Uni-Gold Recombigen HIV Control, Vial 2 x 0.5 ml'
+  - Sulfadoxine/Pyrimethamine 500/25mg, tablets, Blister 10 x 3 Tabs
+  - Efavirenz 200mg [Stocrin/Sustiva], capsule, 90 Caps
+  - Atazanavir 300mg, capsules, 30 Caps
+  - Atazanavir 150mg [Reyataz], capsules, 60 Caps
+  - Malaria Paramax-3 Kit, 25 Tests
+  - HIV 1/2, Determine Kit without Lancets, Buffer or Caplillary Tubes, 100 Tests
+  - Didanosine 125mg, delayed-release capsules, 30 Caps
+  - HIV 1/2, Bioline 3.0 Diluent, 25 Tests, Bottle x 5 ml
+  - HIV, Reveal G3 Rapid HIV-1 Antibody Test, 30 Tests
+  - HIV, Bioline HIV 1/2 3.0 Kit, [DON] 25 Tests
+  - Efavirenz 50mg [Stocrin/Sustiva], capsule, 30 Caps
+  - HIV 1/2, OraQuick Rapid Antibody Kit, 100 Tests
+  - HIV, Multispot HIV-1/HIV-2 Rapid Test Kit, 50 Tests
+  - Atazanavir 200mg [Reyataz], capsules, 60 Caps
+  - Quinine 600mg/2ml (as dihydrochloride), injection, 2ml x 100 Ampules
+  - Abacavir/Lamivudine 60/30mg, tablets, 30 Tabs
+  - HIV 1/2, HEXAGON Rapid HIV Kit, 100 Tests
+  - Artesunate+Amodiaquine 50+153mg, tablets, co-blister 6+6 Tabs
+  - Zidovudine 100mg [Retrovir], capsules, 100 Caps
+  - HIV 1/2, INSTI HIV Antibody Individual POC, 1 Test
+  - Malaria, Antigen P.f., HRP2 CareStart Kit, 60 Tests
+  - Didanosine 100mg [Videx],chewable tablets, 60 Tabs
+  - Mefloquine 250mg (as hydrochloride), tablets, 100 Tabs
+  - Nelfinavir 50mg/g [Viracept], oral powder, 144g
+  - Abacavir 20mg/ml, [DON] oral solution, Bottle, 240 ml
+  - Artesunate+Amodiaquine 50+153mg, tablets, co-blister 12+12 Tabs
+  - Quinine 300mg (as sulfate), tablets, Blister 100 x 10 Tabs
+  - HIV 1/2, DoubleCheck Gold Kit, 20 Tests
+  - '#109440**HIV 1/2, INSTI HIV Antibody Individual POC, 1 Test'
+  - Lamivudine/Nevirapine/Stavudine 150/200/40mg, tablets, 60 Tabs
+  - Efavirenz 200mg, tablets, 30 Tabs
+  - Lopinavir/Ritonavir 133.3/33.3mg [Kaletra], capsules, cool, 2 x 90 Caps
+  - HIV 1/2, SKB Colloidal Gold, Diagnostic Kit Set, (includes lancet, transfer pipette
+    & alcohol prep pad), 50 Tests
+  - HIV 1/2, Visitect Kit, 25 Tests
+  - HIV 1/2, ImmunoComb II BiSpot EIA Kit, 36 Tests
+  - Ritonavir 100mg [Norvir], capsules, cool, 84 Caps
+  - HIV 1/2, ImmunoComb TriSpot Ag - Ab Kit, 36 Tests
+  - Didanosine 200mg, [DON] delayed-release capsules, 30 Caps
+  - HIV 1/2, Stat-Pak Buffer Only, 20 Tests
+  - HIV 1/2, Bioline 3.0 Kit, 100 Tests
+  - HIV 1/2, INSTI HIV 1/2 Antibody Kit, 48 Tests
+  - Chloroquine 150mg base (as phosphate), [DON] tablets, 1000 Tabs
+  - Atazanavir 200mg, capsules, 60 Caps
+  - HIV 1/2, InstantChek HIV 1+2 Kit, 100 Tests
+  - Primaquine 15mg base (as diphosphate), tablets, 1000 Tabs
+  - Zidovudine 10mg/ml [Retrovir], solution for IV infusion injection, Vial 5 x 20
+    ml
+  - Zidovudine 300mg [Retrovir], tablets, 60 Tabs
+  - Lamivudine/Nevirapine/Zidovudine 30/50/60mg, [DON] dispersible tablets, 60 Tabs
+  Managed By:
+  - PMO - US
+  - Haiti Field Office
+  Manufacturing Site:
+  - Aurobindo Unit III, India
+  - Mylan (formerly Matrix) Nashik
+  - Hetero Unit III Hyderabad IN
+  - Cipla, Goa, India
+  - Alere Medical Co., Ltd.
+  - Strides, Bangalore, India.
+  - Trinity Biotech, Plc
+  - ABBVIE Ludwigshafen Germany
+  - Inverness Japan
+  - ABBVIE (Abbott) Logis. UK
+  - Chembio Diagnostics Sys. Inc.
+  - Standard Diagnostics, Korea
+  - Aspen-OSD, Port Elizabeth, SA
+  - KHB Test Kit Facility, Shanghai China
+  - Aurobindo Unit VII, IN
+  - MSD, Haarlem, NL
+  - Emcure Plot No.P-2, I.T-B.T. Park, Phase II, MIDC, Hinjwadi, Pune, India
+  - Micro labs, Verna, Goa, India
+  - ABBVIE GmbH & Co.KG Wiesbaden
+  - Bio-Rad Laboratories
+  - Cipla, Kurkumbh, India
+  - BMS Meymac, France
+  - Ranbaxy, Paonta Shahib, India
+  - Cipla, Patalganga, India
+  - Pacific Biotech, Thailand
+  - Hetero, Jadcherla, unit 5, IN
+  - Roche Basel
+  - Gilead(Nycomed) Oranienburg DE
+  - Bristol-Myers Squibb Anagni IT
+  - GSK Mississauga (Canada)
+  - Premier Med. Corp Ltd. India
+  - Roche Madrid
+  - Janssen-Cilag, Latina, IT
+  - Mylan,  H-12 & H-13, India
+  - Orasure Technologies, Inc USA
+  - Inverness USA
+  - Cipla Ltd A-42 MIDC Mahar. IN
+  - GSK Ware (UK)
+  - Not Applicable
+  - Novartis Pharma Suffern, USA
+  - Orasure Technologies, Inc
+  - Micro Labs, Hosur, India
+  - Micro Labs Ltd. (Brown & Burk), India
+  - MSD Elkton USA
+  - ABBVIE (Abbott) France
+  - MSD Manati, Puerto Rico, (USA)
+  - Ranbaxy per Shasun Pharma
+  - Novartis Pharma AG, Switzerland
+  - bioLytical Laboratories
+  - BMS Evansville, US
+  - Guilin OSD site, No 17, China
+  - Human Diagnostic
+  - Ipca Dadra/Nagar Haveli IN
+  - Ranbaxy Fine Chemicals LTD
+  - MSD Patheon, Canada
+  - Ranbaxy per Shasun Pharma Ltd
+  - MSD South Granville Australia
+  - Medopharm Malur Factory, INDIA
+  - ABBVIE (Abbott) St. P'burg USA
+  - INVERNESS ANY
+  - Medochemie Factory A, CY
+  - GSK Crawley
+  - OMEGA Diagnostics, UK
+  - Macleods Daman Plant INDIA
+  - "Weifa A.S., Hausmanngt. 6, P.O. Box 9113 Gr\xC3\xB8nland, 0133, Oslo, Norway"
+  - Gland Pharma Ltd Pally Factory
+  - Janssen Ortho LLC, Puerto Rico
+  - Gland Pharma, Hyderabad, IN
+  - EY Laboratories, USA
+  - Meditab (for Cipla) Daman IN
+  - GSK Barnard Castle UK
+  - Access BIO, L.C.
+  - GSK Aranda
+  - Remedica, Limassol, Cyprus
+  Molecule/Test Type:
+  - Efavirenz
+  - Nevirapine
+  - HIV 1/2, Determine Complete HIV Kit
+  - Lamivudine/Nevirapine/Zidovudine
+  - Lopinavir/Ritonavir
+  - Lamivudine/Zidovudine
+  - Lamivudine
+  - Zidovudine
+  - HIV 1/2, Uni-Gold HIV Kit
+  - Abacavir
+  - Lamivudine/Tenofovir Disoproxil Fumarate
+  - Efavirenz/Lamivudine/Tenofovir Disoproxil Fumarate
+  - Tenofovir Disoproxil Fumarate
+  - Lamivudine/Nevirapine/Stavudine
+  - Emtricitabine/Tenofovir Disoproxil Fumarate
+  - Didanosine
+  - Stavudine
+  - HIV 1/2, Determine HIV Kit, without Lancets
+  - Efavirenz/Emtricitabine/Tenofovir Disoproxil Fumarate
+  - HIV 1/2, Stat-Pak HIV, Kit
+  - Lamivudine/Stavudine
+  - Abacavir/Lamivudine
+  - Ritonavir
+  - HIV 1/2, Bioline 3.0 Kit, Lancets, Capillary pipets, Alcohol swabs included
+  - HIV 1/2, Colloidal Gold, Diagnostic Kit, Antibody
+  - Atazanavir/Ritonavir
+  - HIV 1/2, OraQuick Advance HIV Rapid Antibody Kit
+  - HIV 1/2, Capillus HIV Kit
+  - Saquinavir
+  - HIV, Lancet, Safety, for HIV Test kits, 100 Pcs
+  - HIV 1/2, Bioline 3.0 Kit (no accessories)
+  - Atazanavir
+  - HIV, Genie II HIV-1/HIV-2 Kit
+  - HIV 1/2, Clearview Complete Kit
+  - Darunavir
+  - HIV, Capillary Tubes, for Determine, EDTA, 50uL,100 Pcs
+  - Indinavir
+  - HIV 1/2/O, First Response HIV 1-2.0, v.3.0 Cards Kit
+  - Abacavir/Lamivudine/Zidovudine
+  - HIV 1/2, Stat-Pak Dipstick Assay Kit
+  - Sulfadoxine/Pyrimethamine
+  - Etravirine
+  - Didanosine EC
+  - Artemether/Lumefantrine
+  - Raltegravir
+  - Nelfinavir (as mesilate)
+  - HIV, OraQuick Controls Kit, 3 Vials
+  - HIV 1/2, Genie III Kit
+  - Lamivudine/Zidovudine+Nevirapine
+  - Chase Buffer, Determine, 100 Tests, 2.5ml x 1 Vial
+  - Lamivudine/Zidovudine+Efavirenz
+  - HIV 2, New LAV Blot 2 HIV Kit
+  - HIV 1/2, Determine Kit without Lancets, Buffer or Capillary Tubes, 100 Tests
+  - HIV 1, Uni-Gold Recombigen HIV Control, Vial 2 x 0.5 ml
+  - Malaria Paramax-3 Kit
+  - HIV 1/2, Bioline 3.0 Diluent, 25 Tests
+  - HIV, Reveal G3 Rapid HIV-1 Antibody Test
+  - Artesunate+Amodiaquine
+  - HIV, Bioline HIV 1/2 3.0 Kit
+  - HIV 1/2, INSTI HIV Antibody Individual POC, 1 Test
+  - HIV 1/2, OraQuick Rapid Antibody Kit
+  - HIV, Multispot HIV-1/HIV-2 Rapid Test Kit
+  - Quinine (as dihydrochloride)
+  - HIV 1/2, HEXAGON Rapid HIV Kit
+  - HIV 1/2, ImmunoComb II BiSpot EIA Kit
+  - HIV 1/2, Visitect Kit
+  - Quinine (as sulfate)
+  - Malaria, Antigen P.f., HRP2 CareStart Kit
+  - Mefloquine (as hydrochloride)
+  - HIV 1/2, ImmunoComb TriSpot Ag - Ab Kit
+  - HIV 1/2, Stat-Pak Buffer Only
+  - HIV 1/2, Colloidal Gold, Diagnostic Kit Set (includes lancet, transfer pipette
+    & alcohol prep pad)
+  - Nelfinavir
+  - HIV 1/2, Bioline 3.0 Kit
+  - HIV 1/2, INSTI HIV 1/2 Antibody Kit
+  - Chloroquine base (as phosphate)
+  - HIV 1/2, InstantChek HIV 1+2 Kit
+  - Primaquine base (as diphosphate)
+  - HIV 1/2, DoubleCheck Gold Kit
+  Product Group:
+  - ARV
+  - HRDT
+  - ANTM
+  - ACT
+  - MRDT
+  Project Code:
+  - 104-CI-T30
+  - 114-UG-T30
+  - 151-NG-T30
+  - 108-VN-T30
+  - 109-TZ-T30
+  - 110-ZM-T30
+  - 106-HT-T30
+  - 107-RW-T30
+  - 161-ZA-T30
+  - 111-MZ-T30
+  - 110-ZM-T01
+  - 104-CI-T01
+  - 113-ZW-T30
+  - 133-NG-T30
+  - 111-MZ-T01
+  - 108-VN-T01
+  - 109-TZ-T01
+  - 114-UG-T01
+  - 105-GY-T30
+  - 106-HT-T01
+  - 117-ET-T30
+  - 101-CD-T30
+  - 107-RW-T01
+  - 117-ET-T01
+  - 103-ZW-T30
+  - 151-NG-T01
+  - 102-BI-T30
+  - 112-NG-T01
+  - 102-SD-T30
+  - 102-KE-T30
+  - 119-NA-T01
+  - 102-GY-T01
+  - 113-ZW-T01
+  - 123-NG-T01
+  - 100-CI-T01
+  - 901-CM-T30
+  - 105-GH-T30
+  - 102-NG-T01
+  - 102-KE-T01
+  - 102-GY-T30
+  - 105-SS-T30
+  - 100-ZW-T01
+  - 900-UG-T30
+  - 102-BW-T01
+  - 144-BW-T30
+  - 102-ZW-T30
+  - 103-SS-T30
+  - 200-ZW-T30
+  - 119-NA-T30
+  - 900-SS-T30
+  - 901-NA-T30
+  - 103-CM-T30
+  - 105-GY-T01
+  - 130-NG-T01
+  - 900-TZ-T30
+  - 131-NG-T01
+  - 100-ZW-T30
+  - 123-NG-T30
+  - 100-ZM-T30
+  - 102-SZ-T30
+  - 103-KE-T30
+  - 102-ML-T30
+  - 127-KE-T30
+  - 133-NG-T01
+  - 102-MW-T30
+  - 102-UG-T30
+  - 102-BW-T30
+  - 116-ZA-T30
+  - 105-DO-T30
+  - 112-NG-T30
+  - 100-HT-T01
+  - 154-NG-T30
+  - 202-GT-T30
+  - 110-PK-T30
+  - 126-NG-T01
+  - 200-DO-T30
+  - 900-SZ-T30
+  - 102-CD-T30
+  - 153-NA-T30
+  - 132-NG-T01
+  - 100-GH-T30
+  - 102-DO-T30
+  - 101-KE-T30
+  - 100-BW-T01
+  - 900-CM-T30
+  - 800-CM-T30
+  - 901-GH-T30
+  - 144-BW-T01
+  - 102-SS-T30
+  - 102-LY-T30
+  - 103-MW-T30
+  - 103-DO-T30
+  - 103-ML-T30
+  - 139-NA-T01
+  - 100-BJ-T30
+  - 900-GH-T30
+  - 200-UG-T30
+  - 100-PK-T01
+  - 141-NA-T01
+  - 900-LR-T30
+  - 104-BW-T30
+  - 101-AF-T30
+  - 122-HT-T30
+  - 510-KE-T01
+  - 120-AO-T01
+  - 100-DO-T30
+  - 125-HT-T01
+  - 901-LR-T30
+  - 100-SZ-T01
+  - 153-NG-T01
+  - 901-SZ-T30
+  - 116-ZA-T01
+  - 900-TG-T30
+  - 104-SZ-T30
+  - 136-RW-T01
+  - 100-GN-T30
+  - 203-SZ-T30
+  - A02-SL-T50
+  - 800-LS-T30
+  - 100-BZ-T30
+  - 152-HT-T30
+  - 103-AO-T30
+  - 128-BJ-T01
+  - 201-UG-T30
+  - A01-SN-T50
+  - 900-GY-T30
+  - 100-SL-T01
+  - 103-CD-T30
+  - 103-UG-T30
+  - 102-AO-T30
+  Shipment Mode:
+  - Air
+  - Truck
+  - Air Charter
+  - Ocean
+  Sub Classification:
+  - Adult
+  - HIV test
+  - Pediatric
+  - HIV test - Ancillary
+  - Malaria
+  - ACT
+  Vendor:
+  - SCMS from RDC
+  - Orgenics, Ltd
+  - Aurobindo Pharma Limited
+  - ABBVIE LOGISTICS (FORMERLY ABBOTT LOGISTICS BV)
+  - Trinity Biotech, Plc
+  - MYLAN LABORATORIES LTD (FORMERLY MATRIX LABORATORIES)
+  - HETERO LABS LIMITED
+  - CIPLA LIMITED
+  - CHEMBIO DIAGNOSTIC SYSTEMS, INC.
+  - Standard Diagnostics, Inc.
+  - STRIDES ARCOLAB LIMITED
+  - SHANGHAI KEHUA BIOENGINEERING CO.,LTD.  (KHB)
+  - MERCK SHARP & DOHME IDEA GMBH (FORMALLY MERCK SHARP & DOHME B.V.)
+  - Orasure Technologies Inc.
+  - EMCURE PHARMACEUTICALS LTD
+  - ASPEN PHARMACARE
+  - BRISTOL-MYERS SQUIBB
+  - MICRO LABS LIMITED
+  - Hoffmann-La Roche ltd Basel
+  - BIO-RAD LABORATORIES (FRANCE)
+  - IDA FOUNDATION
+  - GLAXOSMITHKLINE EXPORT LIMITED
+  - Abbott GmbH & Co. KG
+  - LAWRENCE LABORATORIES (SUBSIDIARY OF BRISTOL MYERS SQUIBB)
+  - Premier Medical Corporation Ltd.
+  - SUN PHARMACEUTICAL INDUSTRIES LTD (RANBAXY LABORATORIES LIMITED)
+  - AMSTELFARMA B.V.
+  - MISSIONPHARMA A/S
+  - ZEPHYR BIOMEDICALS
+  - IMRES B.V.
+  - SWORDS LABORATORIES
+  - BIOLYTICAL LABORATORIES INC.
+  - NOVARTIS PHARMA SERVICES AG
+  - GILEAD SCIENCES IRELAND, INC.
+  - HUMAN GMBH
+  - S. BUYS WHOLESALER
+  - INVERNESS MEDICAL INNOVATIONS HONG KONG LTD
+  - RANBAXY Fine Chemicals LTD.
+  - EY Laboratories
+  - JANSSEN SCIENCES IRELAND UC (FORMERLY JANSSEN R&D IRELAND)
+  - OMEGA DIAGNOSTICS LTD
+  - ACTION MEDEOR E.V.
+  - IDIS LIMITED
+  - ABBOTT LABORATORIES (PUERTO RICO)
+  - INVERNESS MEDICAL INNOVATIONS SOUTH AFRICA (PTY) LTD
+  - ACCESS BIO, INC.
+  - SYSMEX AMERICA INC
+  - AUROBINDO PHARAM (SOUTH AFRICA)
+  - ETHNOR DEL ISTMO S.A.
+  - CENTRAL PHARMACEUTICAL COMPANY NO. 1
+  Vendor INCO Term:
+  - N/A - From RDC
+  - EXW
+  - FCA
+  - DDP
+  - CIP
+  - DAP
+  - CIF
+  - DDU

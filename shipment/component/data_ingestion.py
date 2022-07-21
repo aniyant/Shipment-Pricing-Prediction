@@ -1,6 +1,8 @@
+from msilib import schema
 from shipment.entity.config_entity import DataIngestionConfig
 from shipment.entity.artifact_entity import DataIngestionArtifact
-
+from shipment.constant import *
+from shipment.util.util import read_yaml_file
 from shipment.logger import logging
 from shipment.exception import ShipmentException
 import os,sys
@@ -46,9 +48,14 @@ class DataIngestion:
 
     def data_cleaner(self,df:pd.DataFrame) -> pd.DataFrame:
         try:
-            target_column = "Freight Cost (USD)"
-            drop_col = ["index","ID"]
+            schema_file_path = os.path.join(ROOT_DIR,CONFIG_DIR,'schema.yaml')
+            dataset_schema = read_yaml_file(file_path=schema_file_path)
 
+            target_column = dataset_schema[DATASET_TARGET_COLUMN_KEY]
+            numerical_columns = dataset_schema[DATASET_NUMERICAL_COLUMNS_KEY]
+
+            drop_col = ["index","ID","PQ #","PO / SO #","ASN/DN #"]
+            
             if target_column in df.columns:
                 df[target_column] = df[target_column].apply(lambda x: pd.to_numeric(x,errors="coerce"))
                 df.dropna(subset=[target_column],axis=0,inplace=True)
@@ -56,11 +63,34 @@ class DataIngestion:
             else:
                 raise Exception(f"{target_column} NOT FOUND IN DATASET.")
 
+            for col in numerical_columns: 
+                if col in df.columns:
+                    df[col] = df[col].apply(lambda x: pd.to_numeric(x,errors="coerce"))
+            
             for d in drop_col:
                 if d in df.columns:
                     df.drop(columns=[d],axis=1,inplace=True)
 
             return df
+        except Exception as e:
+            raise ShipmentException(e,sys) from e
+
+    def train_test_columns_category_check(self,train_df:pd.DataFrame,test_df:pd.DataFrame)->pd.DataFrame:
+        try:
+            schema_file_path = os.path.join(os.getcwd(),CONFIG_DIR,"schema.yaml")
+
+            dataset_schema_info = read_yaml_file(file_path=schema_file_path)
+
+            for column in test_df.columns:
+                if column in dataset_schema_info[DATASET_DOMAIN_VALUE_KEY].keys():
+                    category = test_df[column].value_counts().to_dict().keys()
+                    for cat in category:
+                        if cat not in dataset_schema_info[DATASET_DOMAIN_VALUE_KEY][column]:
+                            # droping the category of column
+                            test_df.drop(test_df[test_df[column]==cat].index,axis=0,inplace=True)
+            else:
+                logging.info("train test column category checking completed.")
+            return test_df
         except Exception as e:
             raise ShipmentException(e,sys) from e
 
@@ -86,6 +116,9 @@ class DataIngestion:
                                                                  )
             train_data = X_train.join(y_train)
             test_data = X_test.join(y_test)
+            
+            # making the category of test data same as of train data
+            test_data = self.train_test_columns_category_check(train_df=train_data,test_df=test_data)
 
             train_file_path = os.path.join(self.data_ingestion_config.ingested_train_dir,
                                             shipment_file_name)
