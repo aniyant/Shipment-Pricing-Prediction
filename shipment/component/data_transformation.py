@@ -9,7 +9,7 @@ from shipment.util.util import read_yaml_file,save_object,save_numpy_array_data,
 
 from sklearn import preprocessing
 from sklearn.base import BaseEstimator,TransformerMixin
-from sklearn.preprocessing import StandardScaler,OneHotEncoder
+from sklearn.preprocessing import StandardScaler,OneHotEncoder, LabelEncoder, OrdinalEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
@@ -63,7 +63,8 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
             df[LATE_DAYS_BETWEEN_SCHEDULED_DELIVERY_COLUMN_KEY] = df[LATE_DAYS_BETWEEN_SCHEDULED_DELIVERY_COLUMN_KEY].apply(lambda x:str(x).split(" ")[0]).astype('float')
             
             generated_feature = np.c_[np.array(df[LATE_DAYS_BETWEEN_SCHEDULED_DELIVERY_COLUMN_KEY])]
-        
+            #logging.info("generated featrue array:")
+            #logging.info(generated_feature)
             return generated_feature                                                                             
         except Exception as e:
             raise ShipmentException(e, sys) from e
@@ -102,7 +103,7 @@ class DataTransformation:
 
             cat_pipeline = Pipeline(steps=[
                 ('imputer',SimpleImputer(strategy="most_frequent")),
-                ('one_hot_encoder',OneHotEncoder()),
+                ('one_hot_encoder',OrdinalEncoder()),
                 ('scaler',StandardScaler(with_mean=False))
             ])
 
@@ -122,8 +123,8 @@ class DataTransformation:
                 ('num_pipeline',num_pipeline,numerical_columns),
                 ('cat_pipeline',cat_pipeline,categorical_columns),
                 ('datetime_pipeline',datetime_pipeline,datetime_columns)
-            ])
-
+                ])
+                
             return preprocessing
         except Exception as e:
             raise ShipmentException(e,sys) from e
@@ -153,7 +154,7 @@ class DataTransformation:
             logging.info(f"Splitting input and target feature from training and testing dataframe")
             input_feature_train_df = train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df = train_df[target_column_name]
-
+            
             input_feature_test_df = test_df.drop(columns=[target_column_name],axis = 1)
             target_feature_test_df = test_df[target_column_name]
 
@@ -161,9 +162,19 @@ class DataTransformation:
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.fit_transform(input_feature_test_df)
             logging.info("Preprocessing is done")
-            
-            train_arr = np.append(input_feature_train_arr,np.array(target_feature_train_df))
-            test_arr = np.append(input_feature_test_arr,np.array(target_feature_test_df))
+
+            #input_train_df = pd.DataFrame(input_feature_train_arr)  
+            #input_train_df.to_csv(r"C:\Users\aniyant\Desktop\train_df.csv") 
+            #target_feature_train_df.to_csv(r"C:\Users\aniyant\Desktop\target_df.csv")
+
+            target_train_arr = np.array(target_feature_train_df)
+            target_test_arr = np.array(target_feature_test_df)
+
+            #logging.info(f"dimension of train arr : {input_feature_train_arr.ndim}")
+            #logging.info(f"dimension of target arr : {np.c_[target_train_arr].ndim}")
+
+            train_arr = np.c_[input_feature_train_arr,target_train_arr]
+            test_arr = np.c_[input_feature_test_arr,target_test_arr]
 
             transformed_train_dir = self.data_transformation_config.transformed_train_dir
             transformed_test_dir = self.data_transformation_config.transformed_test_dir
